@@ -1,0 +1,75 @@
+[color]
+  ui = true
+[color "branch"]
+  current = bold green
+  local = bold yellow
+  remote = bold red
+[color "diff"]
+  frag = magenta bold
+  old = bold red
+  new = bold green
+  whitespace = white reverse
+[color "status"]
+  added = bold green
+  changed = bold red
+#  untracked = cyan reverse
+#  branch = magenta
+[alias]
+  a = add
+  st = status -s
+  stw = status
+  ci = commit -v
+  cia = commit --amend –C HEAD
+  cl = clone
+  co = checkout
+  br = branch
+  rso = remote show origin
+  # diffs
+  df = diff
+  dw = diff --word-diff
+  dc = diff --cached
+  dcw = diff --word-diff --cached
+  # reset
+  r = reset
+  r1 = reset HEAD^
+  r2 = reset HEAD^^
+  rh = reset --hard
+  rh1 = reset HEAD^ --hard
+  rh2 = reset HEAD^^ --hard
+  # stash
+  sl = stash list
+  sa = stash apply
+  ss = stash save
+  # logs
+  ls = log --graph --pretty=format:"%C(bold)%C(yellow)%h%C(bold)%Cred%d\\ %Creset%s%C(bold)%C(cyan)\\ [%cn]" --decorate
+  ll = log --graph --pretty=format:"%C(bold)%C(yellow)%h%C(bold)%Cred%d\\ %Creset%s%C(bold)%C(cyan)\\ [%cn]" --decorate --numstat
+  lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+  lds = log --graph --pretty=format:"%C(bold)%C(yellow)%h\\ %ad%C(bold)%Cred%d\\ %Creset%s%C(bold)%C(cyan)\\ [%cn]" --decorate --date=short
+  ld = log --graph --pretty=format:"%C(bold)%C(yellow)%h\\ %ad%C(bold)%Cred%d\\ %Creset%s%C(bold)%C(cyan)\\ [%cn]" --decorate --date=relative
+  le = log --graph --oneline --decorate
+  fl = log -u
+  dl = "!git ll -1"
+  dlc = diff --cached HEAD^
+  dr  = "!f() { git diff "$1"^.."$1"; }; f"
+  lc  = "!f() { git ll "$1"^.."$1"; }; f"
+  diffr  = "!f() { git diff "$1"^.."$1"; }; f"
+  # show aliases
+  list-alias = "!git config -l | grep alias | cut -c 7-"
+  # show last tag
+  lasttag = describe --tags --abbrev=0
+  ctags = !.git/hooks/ctags
+  add-upstream = !.git/hooks/add-upstream
+  http-2-ssh = !.git/hooks/http-2-ssh
+  ssh-2-http = !.git/hooks/ssh-2-http
+  submodule-upgrade = !.git/hooks/submodule-upgrade
+[push]
+  # limit no arg push behavior to just the current branch
+  default = tracking
+[core]
+  excludesfile = ~/.gitignore
+[init]
+  templatedir = ~/.git_template
+[hub]
+  host = github.com
+[user]
+	name = Jordan Bramble

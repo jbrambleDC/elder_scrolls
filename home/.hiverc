@@ -1,0 +1,3 @@
+set hive.exec.mode.local.auto=true;
+set hive.cli.print.header=true;
+set hive.cli.print.current.db=true;

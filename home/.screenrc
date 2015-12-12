@@ -1,0 +1,26 @@
+startup_message off
+vbell on
+
+termcap     xterm*|linux* 'AF=\E[3%dm:AB=\E[4%dm'
+terminfo    xterm*|linux* 'AF=\E[3%p1%dm:AB=\E[4%p1%dm'
+termcapinfo xterm*|linux* ti@:te@
+termcapinfo xterm*|linux* OP
+termcapinfo xterm* 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+
+caption always "%{gk}%H %?%{wk}%-Lw%?%{yK}%n*%f %t%?(%u)%?%?%{wk}%+Lw%?%{gk}%=%c %{yk}%d/%M/%Y"
+
+# Make sure ssh-agent works in screen (see http://superuser.com/questions/180148/how-do-you-get-screen-to-automatically-connect-to-the-current-ssh-agent-when-re)
+setenv SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock
+
+hardstatus alwayslastline "%= %3n %t%? [%h]%? %="
+caption always "%= %-w%L>%{= BW}%n*%t%{-}%52<%+w %L="
+defscrollback 50000
+
+termcap     xterm*|linux* 'AF=\E[3%dm:AB=\E[4%dm'
+terminfo    xterm*|linux* 'AF=\E[3%p1%dm:AB=\E[4%p1%dm'
+termcapinfo xterm*|linux* ti@:te@
+termcapinfo xterm*|linux* OP
+termcapinfo xterm* 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+
+# RVM Requirement
+shell -${SHELL}

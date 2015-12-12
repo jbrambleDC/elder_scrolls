@@ -1,0 +1,19 @@
+#!/bin/bash
+source $HOME/.bash_func
+exec < /dev/tty
+
+read -p "${RED}Enter upstream user or organization name: ${RESET}" upstream_user
+if [ -n "$upstream_user" ]; then
+  origin_url=`git config --get remote.origin.url`
+  protocol=`git_url_parse $origin_url 1`
+  base_url=`git_url_parse $origin_url 2`
+  base_separator=`git_url_parse $origin_url 3`
+  user=`git_url_parse $origin_url 4`
+  repo=`git_url_parse $origin_url 5`
+  upstream_url="${protocol}${base_url}${base_separator}${upstream_user}/${repo}"
+  if ask "add upstream? $upstream_url"; then
+    git remote add upstream $upstream_url
+  fi
+else
+  echo "${RED}ERROR: no upstream name provided; so no upstream added${RESET}"
+fi
