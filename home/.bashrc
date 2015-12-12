@@ -56,31 +56,6 @@ if [[ -n "$PS1" ]]; then
   # along with colorization to show local status (red dirty/green clean)
   function ps1_w_pwd_info() {
     last_command_exit=$?
-    # svn info
-    stat .svn > /dev/null 2>&1
-    if [ $? -eq 0 ]; then
-        SURL=`svn info | grep URL | head -1 | perl -pe 's/URL: (.*)/\1/'`
-        if [ `echo $SURL | grep -E "branches|tags"` ]; then
-          SVER=`echo $SURL \
-            | perl -pe 's{.*/(branches|tags)/(.*)}{\1/\2}' | cut -d/ -f1-2`
-          SPTH=`echo $SURL \
-            | perl -pe 's{.*svnroot/(.*)/(branches|tags)/.*}{/\1}'`
-          SPWD="$SPTH/$SVER"
-          SCL=$IGreen
-        else
-          SPWD=`echo $SURL \
-            | perl -pe 's{.*svnroot/(.*)/trunk(.*)}{/\1/trunk}'`
-          SCL=$IYellow
-        fi
-        svn status | egrep '.+' > /dev/null 2>&1
-        if [ $? -eq 0 ]; then
-          SCL=$IRed
-        fi
-      SvnInfoWColor="$SCL[SVN: $SPWD]"
-    else
-      SvnInfoWColor=""
-    fi
-
     # git info
     git branch >/dev/null 2>&1 && command -v __git_ps1 >/dev/null 2>&1
     if [ $? -eq 0 ]; then
