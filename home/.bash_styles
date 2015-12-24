@@ -101,7 +101,8 @@ export diff_char=±
 export x_char=✘
 
 # misc characters
-export arrow_char=➜
+#export arrow_char=➜
+export arrow_char=👉
 export nofill_star_char=☆
 export notes_char=♫
 export star_char=★

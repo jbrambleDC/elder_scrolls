@@ -2,7 +2,6 @@
 #  aliases
 ############################################################
 alias ls='ls -G'
-alias ls='ls --color=auto'
 alias l='ls -CF'
 alias la='ls -a'
 alias ll='ls -lkh'

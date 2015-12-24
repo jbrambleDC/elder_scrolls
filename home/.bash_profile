@@ -4,11 +4,11 @@
 export debug_source=false
 # load helper functions (Includes source_if_exists)
 source $HOME/.bash_func
-export MYSQL_PASSWORD="dfsdjfsdfs"
-export OAUTH_TOKEN=13ae761bdd10056b0ea00161ca4bf0838cbb84fd
-export puppet_dir=$workspace/puppet
-export crypto_dir=$workspace/client-crypto
 export RTV_EDITOR=vi
+source_if_exists $HOME/git-prompt.sh $HOME/git-completion.bash
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
 # prevents duplicated path created when using tmux
 # by clearing out the old path and then rebuilding it
 # like a brand new login shell
