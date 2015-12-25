@@ -94,7 +94,7 @@ export UserName="\u"
 export Jobs="\j"
 
 # git characters
-export branch_char=⭠
+export branch_char=⚛
 export check_char=✔
 export detached_head_char=➦
 export diff_char=±
