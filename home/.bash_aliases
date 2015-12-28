@@ -17,7 +17,6 @@ alias lr='ls -R'
 alias llr='ll -R'
 alias llra='llr -a'
 alias clr='clear'
-alias df='df -kTh'
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
@@ -47,14 +46,18 @@ alias gs="g status"
 alias ga="g add"
 alias reb=i_rebase
 alias hideme='history -d $((HISTCMD-1)) &&'
-alias gt='g log --graph --decorate --pretty=oneline --abbrev-commit'
+alias gt='g ls'
 alias histg="history | grep"
 alias top='htop'
-alias df="pydf -kTh"
+alias df="pydf -kh"
 alias tsvcut="csvcut -t"
 alias ntsv="tsvcut -n"
 alias ncsv="csvcut -n"
 alias myip="curl http://ipecho.net/plain; echo"
+alias rand="shuf"
+alias hn="pyhn"
+## add a tweets.csv from your twitter account to your home directory for next alias to work.
+alias 1tweet="rand -n 1 $HOME/tweets.csv | csvcut -c 4,6 | csvlook"
 export GRC=`which grc 2>/dev/null`
 if [ "$TERM" != dumb ] && [ -n GRC ]
 then
