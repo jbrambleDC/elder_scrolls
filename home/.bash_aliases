@@ -16,18 +16,24 @@ alias lrsr='lrs -R'
 alias lr='ls -R'
 alias llr='ll -R'
 alias llra='llr -a'
+
 alias clr='clear'
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 alias rmf='rm -f'
+
 alias grep='grep --color=auto --exclude-dir="\.git" --exclude-dir="\.svn"'
 alias egrep='egrep --color=auto --exclude-dir="\.git" --exclude-dir="\.svn"'
 alias fgrep='fgrep --color=auto --exclude-dir="\.git" --exclude-dir="\.svn"'
+
 alias t1='tail -n1'
 alias h1='head -n1'
+
 alias vi='vim'
 alias g='hub_or_git'
+alias py='python'
+
 __git_complete g __git_main
 alias sbp="source_if_exists $HOME/.bash_profile"
 alias hr="cd $HSR"
@@ -35,6 +41,8 @@ alias rakeit="rake db:drop && rake db:create && rake db:migrate && rake db:seed"
 alias beeline="beeline --color=true"
 alias tree="tree -I sandcube"
 alias brew_cleaner="brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup"
+
+### Git ###
 alias sq=squash
 alias gp=gpush
 alias gfp=gfpush
@@ -42,26 +50,52 @@ alias gpo="gp origin"
 alias gpu="gp upstream"
 alias gfpo="gfp origin"
 alias gfpu="gfp upstream"
+alias gpa="gpo && gpu"
+alias gfpa="gfpo && gfpu"
 alias gs="g status"
 alias ga="g add"
-alias reb=i_rebase
-alias hideme='history -d $((HISTCMD-1)) &&'
 alias gt='g ls'
+alias reb=i_rebase
+
+### Hist ###
+alias hideme='history -d $((HISTCMD-1)) &&'
 alias histg="history | grep"
+
+### Server Utils ###
 alias top='htop'
 alias df="pydf -kh"
+
+### csvkit ###
 alias tsvcut="csvcut -t"
 alias ntsv="tsvcut -n"
 alias ncsv="csvcut -n"
+
+### Cool Utils ###
 alias myip="curl http://ipecho.net/plain; echo"
 alias rand="shuf"
 alias hn="pyhn"
+alias prettyjson='python -m json.tool'
+alias weather="curl http://wttr\.in/washington"
+alias mycolors="printf \"\e[%dm%d dark\e[0m  \e[%d;1m%d bold\e[0m\n\" {30..37}{,,,} "
+
+### Infrastructure connections ###
+alias cava_connect="pgcli -h cavagrill-pg-rds.caajzzvgueps.us-east-1.rds.amazonaws.com -U jbramble -p 5432"
+alias ccc="cava_connect -d cavagrill"
+alias compeat="cava_connect -d compeat"
+alias grillbox="ssh jbramble@ec2-52-4-196-82.compute-1.amazonaws.com"
+alias gb="grillbox"
+alias rivendell="ssh -i ~/Gtown.pem ec2-user@ec2-52-91-20-132.compute-1.amazonaws.com"
+alias rdell="rivendell"
+alias wintermute="ssh -i ~/Gtown.pem hadoop@ec2-52-91-179-33.compute-1.amazonaws.com"
+alias guiltyspark='ssh pi@192.168.1.253'
+
 ## add a tweets.csv from your twitter account to your home directory for next alias to work.
 alias 1tweet="rand -n 1 $HOME/tweets.csv | csvcut -c 4,6 | csvlook"
+
+alias ipn="ipython notebook"
+alias cheatsheet="cat ~/cheatsheet.txt"
 export GRC=`which grc 2>/dev/null`
 if [ "$TERM" != dumb ] && [ -n GRC ]
 then
   alias colourify="$GRC -es --colour=auto"
-  alias mvnk="colourify -c $HOME/.grc/mvn.config mvn"
-  alias kat="colourify -c $HOME/.grc/mvn.config"
 fi
