@@ -37,10 +37,15 @@ alias py='python'
 __git_complete g __git_main
 alias sbp="source_if_exists $HOME/.bash_profile"
 alias hr="cd $HSR"
-alias rakeit="rake db:drop && rake db:create && rake db:migrate && rake db:seed"
 alias beeline="beeline --color=true"
 alias tree="tree -I sandcube"
 alias brew_cleaner="brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup"
+
+alias gh="open https://github.com"
+alias gmail="open https://gmail.com"
+alias news="open https://news.ycombinator.com"
+alias reddit="open https://reddit.com"
+
 
 ### Git ###
 alias sq=squash
@@ -55,6 +60,7 @@ alias gfpa="gfpo && gfpu"
 alias gs="g status"
 alias ga="g add"
 alias gt='g ls'
+alias gpr='g pull-request --browse'
 alias reb=i_rebase
 
 ### Hist ###
@@ -84,16 +90,15 @@ alias ccc="cava_connect -d cavagrill"
 alias compeat="cava_connect -d compeat"
 alias grillbox="ssh jbramble@ec2-52-4-196-82.compute-1.amazonaws.com"
 alias gb="grillbox"
-alias rivendell="ssh -i ~/Gtown.pem ec2-user@ec2-52-91-20-132.compute-1.amazonaws.com"
-alias rdell="rivendell"
-alias wintermute="ssh -i ~/Gtown.pem hadoop@ec2-52-91-179-33.compute-1.amazonaws.com"
 alias guiltyspark='ssh pi@192.168.1.253'
 
 ## add a tweets.csv from your twitter account to your home directory for next alias to work.
 alias 1tweet="rand -n 1 $HOME/tweets.csv | csvcut -c 4,6 | csvlook"
 
 alias ipn="ipython notebook"
+alias jpn="jupyter notebook"
 alias cheatsheet="cat ~/cheatsheet.txt"
+alias ds_new="cookiecutter https://github.com/drivendata/cookiecutter-data-science"
 export GRC=`which grc 2>/dev/null`
 if [ "$TERM" != dumb ] && [ -n GRC ]
 then

@@ -109,6 +109,16 @@ function hack() {
   history | ack $1
 }
 
+function wiki() {
+  qry=$1
+  open https://en.wikipedia.org/wiki/Special:Search/${qry// /_}
+}
+
+function so() {
+  qry=$1
+  open http://stackoverflow.com/search?q=${qry// /+}
+}
+
 function coalesce() {
   #TODO add error for all empty
   for arg in $@; do
