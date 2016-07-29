@@ -45,6 +45,8 @@ alias gh="open https://github.com"
 alias gmail="open https://gmail.com"
 alias news="open https://news.ycombinator.com"
 alias reddit="open https://reddit.com"
+alias datatau="open http://www.datatau.com"
+alias morning="gmail && news && reddit && datatau"
 
 
 ### Git ###
