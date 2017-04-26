@@ -87,13 +87,6 @@ alias weather="curl http://wttr\.in/washington"
 alias mycolors="printf \"\e[%dm%d dark\e[0m  \e[%d;1m%d bold\e[0m\n\" {30..37}{,,,} "
 
 ### Infrastructure connections ###
-alias cava_connect="pgcli -h cavagrill-pg-rds.caajzzvgueps.us-east-1.rds.amazonaws.com -U jbramble -p 5432"
-alias ccc="cava_connect -d cavagrill"
-alias compeat="cava_connect -d compeat"
-alias grillbox="ssh jbramble@ec2-52-4-196-82.compute-1.amazonaws.com"
-alias gb="grillbox"
-alias guiltyspark='ssh pi@192.168.1.253'
-alias wintermute="psql postgres://ubq26f9ae6lpmj:pfakv4vn3dtbu85b05noil8ett@ec2-52-204-110-73.compute-1.amazonaws.com:5432/d4q571dkik3e59"
 
 ## add a tweets.csv from your twitter account to your home directory for next alias to work.
 alias 1tweet="rand -n 1 $HOME/tweets.csv | csvcut -c 4,6 | csvlook"
