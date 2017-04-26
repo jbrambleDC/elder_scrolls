@@ -2,7 +2,7 @@
 #  aliases
 ############################################################
 alias ls='ls -G'
-alias ls='ls --color=auto'
+#alias ls='ls --color=auto'
 alias l='ls -CF'
 alias la='ls -a'
 alias ll='ls -lkh'
@@ -64,10 +64,10 @@ alias ga="g add"
 alias gt='g ls'
 alias gpr='g pull-request --browse'
 alias reb=i_rebase
-
 ### Hist ###
 alias hideme='history -d $((HISTCMD-1)) &&'
 alias histg="history | grep"
+alias helium="helium --api-key FN7ldoXOz/6PiIp/wbMn9RINlLlBnpEo+1r5H8FgnEM="
 
 ### Server Utils ###
 alias top='htop'
@@ -93,6 +93,7 @@ alias compeat="cava_connect -d compeat"
 alias grillbox="ssh jbramble@ec2-52-4-196-82.compute-1.amazonaws.com"
 alias gb="grillbox"
 alias guiltyspark='ssh pi@192.168.1.253'
+alias wintermute="psql postgres://ubq26f9ae6lpmj:pfakv4vn3dtbu85b05noil8ett@ec2-52-204-110-73.compute-1.amazonaws.com:5432/d4q571dkik3e59"
 
 ## add a tweets.csv from your twitter account to your home directory for next alias to work.
 alias 1tweet="rand -n 1 $HOME/tweets.csv | csvcut -c 4,6 | csvlook"

@@ -58,9 +58,10 @@ for autoload_file in `ls -a $HOME/.bash_autoload* 2>/dev/null`; do
   source_if_exists $autoload_file
 done
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 if_debug_echo "Profile PATH: $PATH"
 if_debug_echo "Profile MANPATH: $MANPATH"
 export path_initialized=true
 export PATH
+
+# added by Miniconda2 4.2.12 installer
+export PATH="/Users/jordanbramble-osx/miniconda2/bin:$PATH"

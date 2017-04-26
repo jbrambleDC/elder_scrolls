@@ -563,6 +563,14 @@ function tcat() {
   fi
 }
 
+function new() {
+  if [ -n "$1" ]; then
+      mkcd $1 && g init && jpn
+  else
+      echo "please provide a project name"
+  fi
+  }
+
 transfer() {
   if [ $# -eq 0 ]; then
     echo "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md";
